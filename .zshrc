@@ -73,6 +73,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 alias l="ls -l"
 alias ll="ls -al"
+alias mkdir="mkdir -p"
 
 # Export cargo binary
 export PATH=$PATH:$HOME/.cargo/bin
