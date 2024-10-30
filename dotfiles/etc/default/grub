@@ -1,0 +1,4 @@
+GRUB_DISTRIBUTOR="ArchLinux"
+GRUB_COLOR_NORMAL="white/black"
+GRUB_COLOR_HIGHLIGHT="white/cyan"
+GRUB_BACKGROUND="/home/partridge/.config/i3/wallpapers/grub_background.png"
