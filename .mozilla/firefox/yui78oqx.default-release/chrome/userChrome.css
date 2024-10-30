@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+	font-family: JetBrainsMono Nerd Font, monospace;
+}
+
+/* Uncomment this to hide bookmark start button and identiy button */
+/*#identity-box,*/
+/*#page-action-buttons,*/
+.findbar-container > checkbox[label="Whole Words"],
+.findbar-container > checkbox[label="Match Diacritics"],
+.tab-close-button,
+.titlebar-buttonbox-container,
+#alltabs-button,
+#tracking-protection-icon-container
+{
+	display: none;
+}
+
+#titlebar {
+	z-index: 2;
+}
+
+#nav-bar {
+	position: fixed !important;
+	z-index: 1;
+	top: -1rem !important;
+	left: 25%;
+	right: 25%;
+	opacity: 0 !important;
+	overflow: visible !important;
+	border-top: none !important;
+	border-radius: 10px;
+	border: 1px solid var(--tab-selected-bgcolor) !important;
+	background: var(--lwt-accent-color) !important;
+
+	@media (max-width: 1100px) {
+		left: 15%;
+		right: 15%;
+	}
+
+	@media (max-width: 800px) {
+		left: 30px;
+		right: 30px;
+	}
+
+  will-change: opacity, top;
+	transition: top 0.3s cubic-bezier(0.270, 0.910, 0.435, 1.280), opacity 0.1s ease !important;
+}
+
+#navigator-toolbox {
+	border-bottom: none !important;
+}
+
+#tabs-newtab-button {
+	opacity: 0;
+	transition: 0.2s opacity ease;
+}
+
+
+#navigator-toolbox:not(:hover, :focus-within, :has([open])) #nav-bar {
+	transition-delay: 0.2s !important;
+}
+
+/*#navigator-toolbox:is(:hover, :focus-within, :has([open])) {*/
+/*	#nav-bar {*/
+/*		top: 3.5rem !important;*/
+/*		opacity: 1 !important;*/
+/*	}*/
+/**/
+/*	#tabs-newtab-button {*/
+/*		opacity: 1;*/
+/*	}*/
+/*}*/
+
+#navigator-toolbox:is(:hover, :focus-within) {
+	#nav-bar {
+		top: 3.5rem !important;
+		opacity: 1 !important;
+	}
+
+	#tabs-newtab-button {
+		opacity: 1;
+	}
+}
+
+:where(.tab-background) {
+	box-shadow: none !important;
+	border-radius: 10px !important;
+}
+
+.tabbrowser-tab {
+	height: 100%;
+
+	&[fadein]:not([pinned]) {
+		max-width: 250px !important;
+	}
+
+	&[selected]:not([pinned]) {
+		min-width: 250px !important;
+		max-width: 250px !important;
+	}
+}
+
+#tabbrowser-tabs .tabbrowser-tab:not([pinned]):hover .tab-close-button {
+		display: flex !important;
+}
+
+:where(#urlbar-background) {
+	border-radius: 10px !important;
+}
+
+.urlbarView-url {
+	color: var(--toolbar-color) !important;
+}
+
+#tabbrowser-arrowscrollbox {
+  min-width: 100vw !important;
+}
+
+findbar:has(.findbar-container) {
+  position: fixed;
+  left: 0;
+  right: 42%;
+  bottom: 0;
+	border-radius: 10px;
+	border: 1px solid var(--tab-selected-bgcolor) !important;
+	background: var(--lwt-accent-color) !important;
+}
